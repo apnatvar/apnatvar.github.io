@@ -1,23 +1,22 @@
 var text_animation_i = 0;
 var text_animation_text = 'APNATVA SINGH RAWAT';
 var text_animation_speed = 75;
-// function text_animation_function(){
-//   if (text_animation_i < text_animation_text.length){
-//     document.getElementById("typing-animation").innerHTML += text_animation_text.charAt(text_animation_i);
-//     text_animation_i++;
-//     setTimeout(text_animation_function, text_animation_speed);
-//   }
-// }
-function text_animation_function(){
-  var places_to_animate = document.querySelectorAll(".typing-animation");
-  for (var i = 0; i < places_to_animate.length; i++){
-    if (text_animation_i < text_animation_text.length){
-      places_to_animate[i].innerHTML += text_animation_text.charAt(text_animation_i);
+document.querySelector("#close").addEventListener
+("click", function(){
+  document.querySelector(".popup").style.display="none";
+  text_animation_function();
+  function text_animation_function(){
+    var places_to_animate = document.querySelectorAll(".typing-animation");
+    for (var i = 0; i < places_to_animate.length; i++){
+      if (text_animation_i < text_animation_text.length){
+        places_to_animate[i].innerHTML += text_animation_text.charAt(text_animation_i);
+      }
     }
+    text_animation_i++;
+    setTimeout(text_animation_function, text_animation_speed);
   }
-  text_animation_i++;
-  setTimeout(text_animation_function, text_animation_speed);
-}
+})
+
 window.onscroll = function () { myFunction1() };
 function myFunction1() {
   var navbar = document.getElementById("myNavbar");
@@ -87,4 +86,3 @@ window.addEventListener("scroll", reveal1);
 window.addEventListener("scroll", reveal3);
 window.addEventListener("scroll", reveal5);
 window.addEventListener("load", text_animation_function)
-  
